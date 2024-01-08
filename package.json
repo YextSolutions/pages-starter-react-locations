@@ -7,15 +7,8 @@
   "type": "module",
   "scripts": {
     "dev": "pages dev",
-    "build": "pages build",
-    "build:serve": "npm run build && yext pages serve",
-    "serve": "yext pages serve",
-    "features": "pages generate features",
-    "fmt": "prettier -w .",
-    "lint": "eslint .",
-    "clean": "rm -rf .artifact-output .yext/ dist/ localData sites-rendered-output",
-    "generate-notices": "generate-license-file --input package.json --output ./THIRD-PARTY-NOTICES --overwrite",
-    "prod": "pages prod"
+    "prod": "pages prod",
+    "build": "pages build"
   },
   "engines": {
     "node": "^18.0.0 || >=20.0.0"
