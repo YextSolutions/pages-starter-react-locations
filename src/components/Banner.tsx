@@ -1,4 +1,3 @@
-import * as React from "react";
 import { Address } from "../types/Address";
 import Cta from "./Cta";
 

@@ -1,5 +1,3 @@
-import * as React from "react";
-
 export const Facebook = (
   props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
 ) => (

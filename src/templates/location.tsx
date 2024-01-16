@@ -8,7 +8,6 @@
  * template for every eligible entity in your Knowledge Graph.
  */
 
-import * as React from "react";
 import {
   GetHeadConfig,
   GetPath,
@@ -20,7 +19,6 @@ import {
   TemplateRenderProps,
   TransformProps,
 } from "@yext/pages";
-import { isProduction } from "@yext/pages/util";
 import "../index.css";
 import Favicon from "../assets/images/yext-favicon.ico";
 import About from "../components/About";
@@ -28,7 +26,6 @@ import Banner from "../components/Banner";
 import Details from "../components/Details";
 import Hours from "../components/Hours";
 import PageLayout from "../components/PageLayout";
-import EditTool from "../components/EditTool";
 import BreadCrumbs from "../components/Breadcrumbs";
 
 /**
@@ -170,7 +167,6 @@ const Location: Template<TemplateRenderProps> = ({
     mainPhone,
     services,
     description,
-    siteDomain,
     dm_directoryParents,
   } = document;
 
@@ -190,8 +186,6 @@ const Location: Template<TemplateRenderProps> = ({
           </div>
         </div>
       </PageLayout>
-      {/* This component displays a link to the entity that represents the given page in the Knowledge Graph*/}
-      {!isProduction(siteDomain) && <EditTool data={document} />}
     </>
   );
 };

@@ -1,7 +1,6 @@
 /**
  * This is an example of how to create a static template that uses getStaticProps to retrieve data.
  */
-import * as React from "react";
 import "../index.css";
 import {
   Template,
