@@ -1,4 +1,3 @@
-import * as React from "react";
 import {
   GetHeadConfig,
   GetPath,
@@ -10,13 +9,11 @@ import {
   TemplateRenderProps,
   TransformProps,
 } from "@yext/pages";
-import { isProduction } from "@yext/pages/util";
 import "../index.css";
 import Favicon from "../assets/images/yext-favicon.ico";
 import Banner from "../components/Banner";
 import DirectoryStateGrid from "../components/DirectoryStateGrid";
 import PageLayout from "../components/PageLayout";
-import EditTool from "../components/EditTool";
 import Breadcrumbs from "../components/Breadcrumbs";
 
 export const config: TemplateConfig = {
@@ -96,7 +93,6 @@ const State: Template<TemplateRenderProps> = ({
   const {
     name,
     description,
-    siteDomain,
     c_addressRegionDisplayName,
     dm_directoryParents,
     dm_directoryChildren,
@@ -123,8 +119,6 @@ const State: Template<TemplateRenderProps> = ({
           />
         </div>
       </PageLayout>
-      {/* This component displays a link to the entity that represents the given page in the Knowledge Graph*/}
-      {!isProduction(siteDomain) && <EditTool data={document} />}
     </>
   );
 };
