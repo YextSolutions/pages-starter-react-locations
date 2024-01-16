@@ -33,7 +33,6 @@ export const config: TemplateConfig = {
     ],
     localization: {
       locales: ["en"],
-      primary: false,
     },
   },
 };

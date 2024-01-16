@@ -65,7 +65,6 @@ export const config: TemplateConfig = {
     // The entity language profiles that documents will be generated for.
     localization: {
       locales: ["en"],
-      primary: false,
     },
     transform: {
       replaceOptionValuesWithDisplayNames: ["paymentOptions"],
