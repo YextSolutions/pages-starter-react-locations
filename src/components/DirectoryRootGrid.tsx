@@ -1,3 +1,4 @@
+import { Link } from "@yext/pages-components";
 import { DirectoryChild } from "../types/DirectoryChild";
 import { DirectoryParent } from "../types/DirectoryParent";
 
@@ -24,15 +25,16 @@ const DirectoryRootGrid = ({
   const sortedChildren = directoryChildren?.sort(sortChildrenByName) || [];
   const childrenDivs = sortedChildren.map((child: DirectoryChild) => (
     <div key={child.slug}>
-      <a
+      <Link
         href={relativePrefixToRoot + child.slug}
         className="font-bold text-2xl text-blue-700 hover:underline"
+        eventName={`directoryRootGrid Click`}
       >
         {child.c_addressRegionDisplayName
           ? child.c_addressRegionDisplayName
           : child.name}{" "}
         ({child.dm_childEntityIds?.length || 0})
-      </a>
+      </Link>
     </div>
   ));
   return (

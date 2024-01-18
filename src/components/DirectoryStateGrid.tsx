@@ -1,5 +1,6 @@
 import { DirectoryParent } from "../types/DirectoryParent";
 import { DirectoryChild } from "../types/DirectoryChild";
+import { Link } from "@yext/pages-components";
 
 interface DirectoryGridProps {
   name?: string;
@@ -28,13 +29,14 @@ const DirectoryStateGrid = ({
     sortedChildren = directoryChildren?.sort(sortByName) || [];
     childrenDivs = sortedChildren.map((child: DirectoryChild) => (
       <div key={child.slug}>
-        <a
+        <Link
           key="uRL"
           href={relativePrefixToRoot + child.slug}
           className="font-bold text-2xl text-blue-700 hover:underline"
+          eventName={`directoryStateGrid Click: ${child.name}`}
         >
           {child.name} ({child.dm_childEntityIds?.length || 0})
-        </a>
+        </Link>
       </div>
     ));
   }

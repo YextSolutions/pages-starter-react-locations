@@ -1,4 +1,4 @@
-import { Address } from "@yext/pages-components";
+import { Address, Link } from "@yext/pages-components";
 import { formatPhoneNumber } from "react-phone-number-input";
 import { DirectoryParent } from "../types/DirectoryParent";
 import { DirectoryChild } from "../types/DirectoryChild";
@@ -30,15 +30,16 @@ const DirectoryCityGrid = ({
     childrenDivs = sortedChildren.map((child: any) => (
       <div
         key={child.slug}
-        className="border rounded-lg drop-shadow-md bg-gray-100 space-y-6 p-3 h-60"
+        className="border rounded-lg drop-shadow-md bg-gray-100 space-y-6 p-3 h-auto"
       >
         <h2>
-          <a
+          <Link
             className="font-bold text-2xl text-blue-700 hover:underline"
             href={relativePrefixToRoot + child.slug}
+            eventName={`directoryCityGrid Click: ${child.name}`}
           >
             {child.name}
-          </a>
+          </Link>
         </h2>
         <div className="m-1 border"></div>
         <Address address={child.address}></Address>
