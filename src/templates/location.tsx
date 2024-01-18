@@ -159,6 +159,7 @@ export const transformProps: TransformProps<any> = async (data) => {
 const Location: Template<TemplateRenderProps> = ({
   relativePrefixToRoot,
   document,
+  __meta
 }) => {
   const {
     name,
@@ -172,7 +173,7 @@ const Location: Template<TemplateRenderProps> = ({
 
   return (
     <>
-      <PageLayout>
+      <PageLayout templateData={{__meta, document}}>
         <Banner name={name} address={address} />
         <div className="centered-container">
           <BreadCrumbs

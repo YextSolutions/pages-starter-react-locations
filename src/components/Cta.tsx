@@ -1,3 +1,4 @@
+import { Link } from "@yext/pages-components";                         // New
 import { twMerge } from "tailwind-merge";
 
 export interface CtaProps {
@@ -9,7 +10,7 @@ export interface CtaProps {
 const Cta = ({ buttonText, url, style }: CtaProps) => {
   return (
     <>
-      <a
+      <Link
         href={url}
         className={twMerge(
           "py-4 px-6 text-base font-bold rounded-lg hover:scale-[1.02] duration-250",
@@ -17,9 +18,10 @@ const Cta = ({ buttonText, url, style }: CtaProps) => {
         )}
         target=""
         rel="noopener noreferrer"
+          eventName={`cta Click: ${buttonText}`}
       >
         {buttonText}
-      </a>
+      </Link>
     </>
   );
 };

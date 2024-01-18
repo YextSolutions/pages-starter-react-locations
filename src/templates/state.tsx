@@ -89,6 +89,7 @@ export const transformProps: TransformProps<any> = async (data) => {
 const State: Template<TemplateRenderProps> = ({
   relativePrefixToRoot,
   document,
+  __meta,
 }) => {
   const {
     name,
@@ -100,7 +101,7 @@ const State: Template<TemplateRenderProps> = ({
 
   return (
     <>
-      <PageLayout>
+      <PageLayout templateData={{__meta, document}}>
         <Banner
           name={c_addressRegionDisplayName ? c_addressRegionDisplayName : name}
         />

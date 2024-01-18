@@ -104,10 +104,10 @@ export const getHeadConfig: GetHeadConfig<
  * This is the main template. It can have any name as long as it's the default export.
  * The props passed in here are the direct result from `transformProps`.
  */
-const Static: Template<ExternalImageRenderData> = ({ externalImage }) => {
+const Static: Template<ExternalImageRenderData> = ({ externalImage, __meta }) => {
   return (
     <>
-      <PageLayout>
+      <PageLayout templateData={{__meta, document}}>
         <Banner name={"Turtlehead Tacos"} />
         <div className="centered-container">
           <div className="section space-y-14 px-10">
