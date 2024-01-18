@@ -104,7 +104,7 @@ export const getHeadConfig: GetHeadConfig<
  * This is the main template. It can have any name as long as it's the default export.
  * The props passed in here are the direct result from `transformProps`.
  */
-const Static: Template<ExternalImageRenderData> = ({ externalImage, __meta }) => {
+const Static: Template<ExternalImageRenderData> = ({ externalImage, document, __meta }) => {
   return (
     <>
       <PageLayout templateData={{__meta, document}}>
