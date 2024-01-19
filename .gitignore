@@ -3,6 +3,7 @@ sites-rendered-output/
 localData/
 dist/
 .yext
+.yextrc
 .artifact-output
 .env
 !.env.local

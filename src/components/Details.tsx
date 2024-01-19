@@ -1,4 +1,4 @@
-import { Address } from "@yext/pages-components";
+import { Address, Link } from "@yext/pages-components";
 import { formatPhoneNumber } from "react-phone-number-input";
 import List from "../components/List";
 
@@ -23,9 +23,9 @@ const Details = ({ address, phone, services }: DetailsProps) => {
           />
           {phone && (
             <span>
-              <a href={`tel:${phone}`} className="hover:underline">
+              <Link href={`tel:${phone}`} className="hover:underline">
                 {formatPhoneNumber(phone)}
-              </a>
+              </Link>
             </span>
           )}
           {services && <List list={services} />}
