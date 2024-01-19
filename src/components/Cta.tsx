@@ -18,6 +18,7 @@ const Cta = ({ buttonText, url, style }: CtaProps) => {
         )}
         target=""
         rel="noopener noreferrer"
+        cta={{link: url, label: buttonText, linkType: "URL"}}
       >
         {buttonText}
       </Link>
