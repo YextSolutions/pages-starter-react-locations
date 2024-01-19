@@ -33,7 +33,6 @@ const DirectoryStateGrid = ({
           key="uRL"
           href={relativePrefixToRoot + child.slug}
           className="font-bold text-2xl text-blue-700 hover:underline"
-          eventName={`directoryStateGrid Click: ${child.name}`}
         >
           {child.name} ({child.dm_childEntityIds?.length || 0})
         </Link>

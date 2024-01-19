@@ -36,7 +36,6 @@ const DirectoryCityGrid = ({
           <Link
             className="font-bold text-2xl text-blue-700 hover:underline"
             href={relativePrefixToRoot + child.slug}
-            eventName={`directoryCityGrid Click: ${child.name}`}
           >
             {child.name}
           </Link>

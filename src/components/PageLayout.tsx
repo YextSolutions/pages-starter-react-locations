@@ -6,10 +6,20 @@ import { TemplateProps } from "@yext/pages";
 export interface PageLayoutProps {
   children?: React.ReactNode;
   _site?: any;
-  templateData: TemplateProps;
+  templateData?: TemplateProps;
 }
 
 const PageLayout = ({ children, _site, templateData }: PageLayoutProps) => {
+  if (!templateData) {
+    return (
+      <div className="min-h-screen">
+        <Header _site={_site} />
+        {children}
+        <Footer _site={_site} />
+      </div>
+    )
+  }
+
   return (
     <AnalyticsProvider templateData={templateData}>
       <div className="min-h-screen">

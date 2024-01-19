@@ -18,7 +18,6 @@ const Cta = ({ buttonText, url, style }: CtaProps) => {
         )}
         target=""
         rel="noopener noreferrer"
-          eventName={`cta Click: ${buttonText}`}
       >
         {buttonText}
       </Link>

@@ -100,13 +100,14 @@ export const transformProps: TransformProps<any> = async (data) => {
 const City: Template<TemplateRenderProps> = ({
   relativePrefixToRoot,
   document,
+  __meta,
 }) => {
   const { name, description, dm_directoryParents, dm_directoryChildren } =
     document;
 
   return (
     <>
-      <PageLayout>
+      <PageLayout templateData={{__meta, document}}>
         <Banner name={name} />
         <div className="centered-container">
           <Breadcrumbs

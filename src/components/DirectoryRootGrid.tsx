@@ -28,7 +28,6 @@ const DirectoryRootGrid = ({
       <Link
         href={relativePrefixToRoot + child.slug}
         className="font-bold text-2xl text-blue-700 hover:underline"
-        eventName={`directoryRootGrid Click`}
       >
         {child.c_addressRegionDisplayName
           ? child.c_addressRegionDisplayName

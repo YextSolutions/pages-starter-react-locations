@@ -23,7 +23,7 @@ const Details = ({ address, phone, services }: DetailsProps) => {
           />
           {phone && (
             <span>
-              <Link href={`tel:${phone}`} className="hover:underline" eventName={`details Click: ${formatPhoneNumber(phone)}`}>
+              <Link href={`tel:${phone}`} className="hover:underline">
                 {formatPhoneNumber(phone)}
               </Link>
             </span>
