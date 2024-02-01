@@ -46,7 +46,7 @@ type ExternalImageData = TemplateProps & { externalImage: ExternalImage };
 export const transformProps: TransformProps<ExternalImageData> = async (
   data
 ) => {
-  const url = YEXT_PUBLIC_EXTERNAL_IMAGE_API_BASE_URL + "/2";
+  const url = `https://jsonplaceholder.typicode.com/photos/2`;
   const externalImage = (await fetch(url).then((res: any) =>
     res.json()
   )) as ExternalImage;
@@ -104,10 +104,14 @@ export const getHeadConfig: GetHeadConfig<
  * This is the main template. It can have any name as long as it's the default export.
  * The props passed in here are the direct result from `transformProps`.
  */
-const Static: Template<ExternalImageRenderData> = ({ externalImage, __meta, document }) => {
+const Static: Template<ExternalImageRenderData> = ({
+  externalImage,
+  __meta,
+  document,
+}) => {
   return (
     <>
-      <PageLayout templateData={{__meta, document}}>
+      <PageLayout templateData={{ __meta, document }}>
         <Banner name={"Turtlehead Tacos"} />
         <div className="centered-container">
           <div className="section space-y-14 px-10">
