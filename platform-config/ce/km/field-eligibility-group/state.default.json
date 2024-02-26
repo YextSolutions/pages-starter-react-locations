@@ -9,11 +9,7 @@
     "c_addressRegionAbbreviation",
     "c_addressRegionDisplayName",
     "description",
-    "slug",
-    "dm_directoryChildren",
-    "dm_directoryManagerId",
-    "dm_directoryParents",
-    "dm_childEntityIds"
+    "slug"
   ],
   "required": []
 }

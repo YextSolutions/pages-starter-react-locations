@@ -54,10 +54,11 @@ export const config: TemplateConfig = {
       "geocodedCoordinate",
       "services",
       "photoGallery",
-      "dm_directoryParents.name",
-      "dm_directoryParents.slug",
-      "dm_directoryParents.meta",
-      "dm_directoryParents.c_addressRegionDisplayName",
+      // These fields will be used in Module 5 of the Hitchhikers Pages Track: https://hitchhikers.yext.com/tracks/pages-development/pgs605-create-directory/01-yext-directory-manager/
+      // "dm_directoryParents_us_directory.name",
+      // "dm_directoryParents_us_directory.slug",
+      // "dm_directoryParents_us_directory.meta",
+      // "dm_directoryParents_us_directory.c_addressRegionDisplayName",
     ],
     // The entity language profiles that documents will be generated for.
     localization: {
@@ -132,20 +133,22 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
  *
  * This function will be run during generation and pass in directly as props to the default
  * exported function.
+ *
+ * transformProps will be used in Module 5 of the Hitchhikers Pages Track: https://hitchhikers.yext.com/tracks/pages-development/pgs605-create-directory/01-yext-directory-manager/
  */
-export const transformProps: TransformProps<any> = async (data) => {
-  const { dm_directoryParents, name } = data.document;
+// export const transformProps: TransformProps<any> = async (data) => {
+//   const { dm_directoryParents_us_directory, name } = data.document;
 
-  (dm_directoryParents || []).push({ name: name, slug: "" });
+//   (dm_directoryParents_us_directory || []).push({ name: name, slug: "" });
 
-  return {
-    ...data,
-    document: {
-      ...data.document,
-      dm_directoryParents: dm_directoryParents,
-    },
-  };
-};
+//   return {
+//     ...data,
+//     document: {
+//       ...data.document,
+//       dm_directoryParents: dm_directoryParents_us_directory,
+//     },
+//   };
+// };
 
 /**
  * This is the main template. It can have any name as long as it's the default export.
@@ -159,7 +162,7 @@ export const transformProps: TransformProps<any> = async (data) => {
 const Location: Template<TemplateRenderProps> = ({
   relativePrefixToRoot,
   document,
-  __meta
+  __meta,
 }) => {
   const {
     name,
@@ -173,7 +176,7 @@ const Location: Template<TemplateRenderProps> = ({
 
   return (
     <>
-      <PageLayout templateData={{__meta, document}}>
+      <PageLayout templateData={{ __meta, document }}>
         <Banner name={name} address={address} />
         <div className="centered-container">
           <BreadCrumbs
