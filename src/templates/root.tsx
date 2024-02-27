@@ -25,10 +25,11 @@ export const config: TemplateConfig = {
       "meta",
       "name",
       "slug",
-      "dm_directoryChildren.name",
-      "dm_directoryChildren.slug",
-      "dm_directoryChildren.c_addressRegionDisplayName",
-      "dm_directoryChildren.dm_childEntityIds",
+      // These fields will be used in Module 5 of the Hitchhikers Pages Track: https://hitchhikers.yext.com/tracks/pages-development/pgs605-create-directory/01-yext-directory-manager/
+      // "dm_directoryChildren.name",
+      // "dm_directoryChildren.slug",
+      // "dm_directoryChildren.c_addressRegionDisplayName",
+      // "dm_directoryChildren.dm_childEntityIds",
     ],
     localization: {
       locales: ["en"],
@@ -76,7 +77,7 @@ const Index: Template<TemplateRenderProps> = ({
 
   return (
     <>
-      <PageLayout templateData={{__meta, document}}>
+      <PageLayout templateData={{ __meta, document }}>
         <Banner name={"Turtlehead Tacos"} />
         <div className="centered-container">
           <div className="section space-y-14 px-10">

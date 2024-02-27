@@ -30,13 +30,14 @@ export const config: TemplateConfig = {
       "description",
       "slug",
       "c_addressRegionDisplayName",
-      "dm_directoryParents.name",
-      "dm_directoryParents.slug",
-      "dm_directoryParents.meta",
-      "dm_directoryChildren.name",
-      "dm_directoryChildren.slug",
-      "dm_directoryChildren.dm_childEntityIds",
-      "dm_childEntityIds",
+      // These fields will be used in Module 5 of the Hitchhikers Pages Track: https://hitchhikers.yext.com/tracks/pages-development/pgs605-create-directory/01-yext-directory-manager/
+      // "dm_directoryParents_us_directory.name",
+      // "dm_directoryParents_us_directory.slug",
+      // "dm_directoryParents_us_directory.meta",
+      // "dm_directoryChildren.name",
+      // "dm_directoryChildren.slug",
+      // "dm_directoryChildren.dm_childEntityIds",
+      // "dm_childEntityIds",
     ],
     localization: {
       locales: ["en"],
@@ -72,19 +73,20 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
   };
 };
 
-export const transformProps: TransformProps<any> = async (data) => {
-  const { dm_directoryParents, name } = data.document;
+// transformProps will be used in Module 5 of the Hitchhikers Pages Track: https://hitchhikers.yext.com/tracks/pages-development/pgs605-create-directory/01-yext-directory-manager/
+// export const transformProps: TransformProps<any> = async (data) => {
+//   const { dm_directoryParents_us_directory, name } = data.document;
 
-  (dm_directoryParents || []).push({ name: name, slug: "" });
+//   (dm_directoryParents_us_directory || []).push({ name: name, slug: "" });
 
-  return {
-    ...data,
-    document: {
-      ...data.document,
-      dm_directoryParents: dm_directoryParents,
-    },
-  };
-};
+//   return {
+//     ...data,
+//     document: {
+//       ...data.document,
+//       dm_directoryParents: dm_directoryParents_us_directory,
+//     },
+//   };
+// };
 
 const State: Template<TemplateRenderProps> = ({
   relativePrefixToRoot,
@@ -101,7 +103,7 @@ const State: Template<TemplateRenderProps> = ({
 
   return (
     <>
-      <PageLayout templateData={{__meta, document}}>
+      <PageLayout templateData={{ __meta, document }}>
         <Banner
           name={c_addressRegionDisplayName ? c_addressRegionDisplayName : name}
         />

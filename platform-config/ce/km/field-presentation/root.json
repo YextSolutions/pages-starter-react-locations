@@ -21,15 +21,6 @@
           "id": "description"
         }
       ]
-    },
-    {
-      "displayName": "Directory Manager",
-      "entryType": "SECTION",
-      "fields": [
-        {
-          "id": "dm_directoryChildren"
-        }
-      ]
     }
   ]
 }
