@@ -1,24 +1,32 @@
 import Header from "./Header";
 import Footer from "./Footer";
-import { AnalyticsProvider, AnalyticsScopeProvider } from "@yext/pages-components";
+import {
+  AnalyticsProvider,
+  AnalyticsScopeProvider,
+} from "@yext/pages-components";
 import { TemplateProps } from "@yext/pages";
 
 export interface PageLayoutProps {
   children?: React.ReactNode;
-  _site?: any;
   templateData: TemplateProps;
 }
 
-const PageLayout = ({ children, _site, templateData }: PageLayoutProps) => {
+const PageLayout = ({ children, templateData }: PageLayoutProps) => {
   return (
-    <AnalyticsProvider templateData={templateData}>
+    <AnalyticsProvider
+      apiKey={YEXT_PUBLIC_EVENTS_API_KEY}
+      templateData={templateData}
+      currency="USD"
+      productionDomains={[YEXT_PUBLIC_PROD_DOMAIN]}
+      enableDebugging={true}
+    >
       <div className="min-h-screen">
         <AnalyticsScopeProvider name="header">
-          <Header _site={_site} />
+          <Header />
         </AnalyticsScopeProvider>
         {children}
         <AnalyticsScopeProvider name="footer">
-          <Footer _site={_site} />
+          <Footer />
         </AnalyticsScopeProvider>
       </div>
     </AnalyticsProvider>

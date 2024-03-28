@@ -8,7 +8,6 @@ import {
 } from "../assets/svgs/SocialIcons";
 
 export interface FooterProps {
-  _site?: any;
   logo?: string;
   paragraph?: string;
 }
