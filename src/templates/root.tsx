@@ -38,7 +38,7 @@ export const config: TemplateConfig = {
 };
 
 export const getPath: GetPath<TemplateProps> = ({ document }) => {
-  return document.slug;
+  return "test";
 };
 
 export const getHeadConfig: GetHeadConfig<
