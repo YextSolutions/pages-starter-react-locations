@@ -1,4 +1,4 @@
-import { Link } from "@yext/pages-components";                         // New
+import { Link } from "@yext/pages-components";
 import { twMerge } from "tailwind-merge";
 
 export interface CtaProps {
@@ -18,7 +18,7 @@ const Cta = ({ buttonText, url, style }: CtaProps) => {
         )}
         target=""
         rel="noopener noreferrer"
-        cta={{link: url, label: buttonText, linkType: "URL"}}
+        cta={{ link: url, label: buttonText, linkType: "URL" }}
       >
         {buttonText}
       </Link>

@@ -74,7 +74,7 @@ export const config: TemplateConfig = {
  * Defines the path that the generated file will live at for production.
  *
  * NOTE: To preview production URLs locally, you must return document.slug from this function
- * and ensure that each entity has the slug field pouplated.
+ * and ensure that each entity has the slug field populated.
  */
 export const getPath: GetPath<TemplateProps> = ({ document }) => {
   return document.slug
@@ -159,11 +159,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
  * components any way you'd like as long as it lives in the src folder (though you should not put
  * them in the src/templates folder as this is specific for true template files).
  */
-const Location: Template<TemplateRenderProps> = ({
-  relativePrefixToRoot,
-  document,
-  __meta,
-}) => {
+const Location: Template<TemplateRenderProps> = (data) => {
   const {
     name,
     address,
@@ -172,11 +168,12 @@ const Location: Template<TemplateRenderProps> = ({
     services,
     description,
     dm_directoryParents,
-  } = document;
+  } = data.document;
+  const relativePrefixToRoot = data.relativePrefixToRoot;
 
   return (
     <>
-      <PageLayout templateData={{ __meta, document }}>
+      <PageLayout templateData={data}>
         <Banner name={name} address={address} />
         <div className="centered-container">
           <BreadCrumbs

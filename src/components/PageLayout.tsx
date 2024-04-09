@@ -18,6 +18,8 @@ const PageLayout = ({ children, templateData }: PageLayoutProps) => {
       templateData={templateData}
       currency="USD"
       productionDomains={[YEXT_PUBLIC_PROD_DOMAIN]}
+      // Discussed in Module 7 of the Hitchhikers Pages Track: https://hitchhikers.yext.com/tracks/pages-development/pgs607-analytics/01-analytics-provider/
+      // uncomment the line below to enable debugging
       enableDebugging={true}
     >
       <div className="min-h-screen">

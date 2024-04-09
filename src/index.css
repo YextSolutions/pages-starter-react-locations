@@ -1,3 +1,5 @@
+@import "@yext/pages-components/style.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
