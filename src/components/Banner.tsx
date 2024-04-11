@@ -1,5 +1,5 @@
+import { Link } from "@yext/pages-components";
 import { Address } from "../types/Address";
-import Cta from "./Cta";
 
 export interface BannerProps {
   name?: string;
@@ -35,16 +35,22 @@ const Banner = (props: BannerProps) => {
               </p>
             </div>
             <div className="flex py-3 justify-between">
-              <Cta
-                buttonText="Order Pickup"
-                url="#"
-                style="text-orange bg-white"
-              ></Cta>
-              <Cta
-                buttonText="Order Delivery"
-                url="#"
-                style="text-orange bg-white"
-              ></Cta>
+              <Link
+                className="py-4 px-6 text-base font-bold rounded-lg text-orange bg-white hover:scale-[1.02] duration-250"
+                href="#"
+                target=""
+                rel="noopener noreferrer"
+              >
+                Order Pickup
+              </Link>
+              <Link
+                className="py-4 px-6 text-base font-bold rounded-lg text-orange bg-white hover:scale-[1.02] duration-250"
+                href="#"
+                target=""
+                rel="noopener noreferrer"
+              >
+                Order Delivery
+              </Link>
             </div>
           </div>
         </div>

@@ -1,6 +1,6 @@
-import Cta from "./Cta";
 import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Link } from "@yext/pages-components";
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -44,21 +44,27 @@ const Header = () => {
                 </div>
                 <div className="hidden md:ml-6 md:flex md:space-x-4">
                   {navigation.map((link) => (
-                    <Cta
-                      key={link.href}
-                      buttonText={link.name}
-                      url={link.href}
-                      style="inline-flex items-center border-b-4 rounded-none border-transparent hover:border-orange"
-                    />
+                    <Link
+                      href={link.href}
+                      className="inline-flex items-center border-b-4 rounded-none border-transparent hover:border-orange"
+                      target=""
+                      rel="noopener noreferrer"
+                    >
+                      {link.name}
+                    </Link>
                   ))}
                 </div>
               </div>
               <div className="flex items-center">
-                <Cta
+                <Link
+                  href="#"
                   buttonText="Order Online"
-                  url="#"
-                  style="text-white bg-orange shadow-md"
-                />
+                  className="text-white text-base font-bold rounded-lg px-6 py-4 bg-orange shadow-md"
+                  target=""
+                  rel="noopener noreferrer"
+                >
+                  Order Online
+                </Link>
               </div>
             </div>
           </div>

@@ -1,7 +1,6 @@
 import { Address, Link } from "@yext/pages-components";
 import { formatPhoneNumber } from "react-phone-number-input";
 import List from "../components/List";
-import Cta from "./Cta";
 
 export interface DetailsProps {
   address: any;
@@ -15,7 +14,7 @@ const Details = ({ address, phone, services }: DetailsProps) => {
       <div className="border-b border-gray-300 bg-gray-100 shadow-md rounded-lg p-2 px-4 py-5 sm:p-6">
         <div className="grid gap-y-3">
           <div className="text-xl font-semibold">Store Details</div>
-          <div>
+          <div className="gap-y-3">
             <Address
               address={address}
               lines={[
@@ -25,9 +24,9 @@ const Details = ({ address, phone, services }: DetailsProps) => {
             />
             <Link
               eventName="get_directions"
-              buttonText="Get Directions"
-              url="#"
-              style="text-orange px-0"
+              className="text-orange font-bold"
+              href="#"
+              target=""
               rel="noopener noreferrer"
             >
               Get Directions
