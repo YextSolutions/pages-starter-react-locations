@@ -23,7 +23,7 @@ const Details = ({ address, phone, services }: DetailsProps) => {
               ]}
             />
             <Link
-              eventName="get_directions"
+              eventName="STOREPAGES_DRIVINGDIRECTIONS"
               className="text-orange font-bold"
               href="#"
               target=""
