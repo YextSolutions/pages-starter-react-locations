@@ -11,6 +11,7 @@ const Cta = ({ buttonText, url, style }: CtaProps) => {
   return (
     <>
       <Link
+        eventName
         href={url}
         className={twMerge(
           "py-4 px-6 text-base font-bold rounded-lg hover:scale-[1.02] duration-250",
@@ -18,7 +19,6 @@ const Cta = ({ buttonText, url, style }: CtaProps) => {
         )}
         target=""
         rel="noopener noreferrer"
-        cta={{ link: url, label: buttonText, linkType: "URL" }}
       >
         {buttonText}
       </Link>
